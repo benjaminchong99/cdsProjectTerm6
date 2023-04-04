@@ -11,19 +11,19 @@ no_track_count = 0
 not_english_count = 0
 langdetect_exc_count = 0
 
-with open("../Initial datasets/dataset-of-00s.csv", 'r', encoding="utf-8", newline="") as song_list_file:
+with open("../Initial datasets/dataset-of-90s.csv", 'r', encoding="utf-8", newline="") as song_list_file:
     csv_reader = csv.reader(song_list_file)
     next(csv_reader)
     rows = list(csv_reader)
 
-    with open("../Song data/new_dataset_0.csv", "a", encoding="utf-8", newline="") as song_data_file:
+    with open("../Song data/new_dataset_90s.csv", "a", encoding="utf-8", newline="") as song_data_file:
         # create the csv writer
         writer = csv.writer(song_data_file)
 
         # write a row to the csv file
         # writer.writerow(header)
 
-        for i in range(4999, 5874):
+        for i in range(5000, 5521):
             print(i)
             row = rows[i]
             track_id = musixmatch.get_track_id(row[1], row[0])

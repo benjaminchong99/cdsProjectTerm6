@@ -13,7 +13,7 @@ KEY_3 = "7d484435f321756468b03582cfdf2947"
 KEY_4 = "f484a64a095f02d9262bc1cc09a5b8d9"
 
 def get_track_id(artist_name: str, song_title: str):
-    api_call = base_url + "track.search" + "&q_artist=" + artist_name + "&q_track=" + song_title + "&apikey=" + KEY_4
+    api_call = base_url + "track.search" + "&q_artist=" + artist_name + "&q_track=" + song_title + "&apikey=" + SHAUN_API_KEY
     try:
         request = requests.get(api_call)
         data = request.json()
@@ -44,7 +44,7 @@ def get_track_id(artist_name: str, song_title: str):
         return "No track of this title in musixmatch"
     
 def get_lyrics_from_track_id(track_id):
-    api_call = base_url + "track.lyrics.get" + "&track_id=" + str(track_id) + "&apikey=" + KEY_4
+    api_call = base_url + "track.lyrics.get" + "&track_id=" + str(track_id) + "&apikey=" + SHAUN_API_KEY
     try:
         request = requests.get(api_call)
         data = request.json()
